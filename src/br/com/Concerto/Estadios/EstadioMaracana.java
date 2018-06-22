@@ -1,7 +1,7 @@
 package br.com.Concerto.Estadios;
 
-public class EstadioMaracana extends  Estadio{
-	
-	
-	
+public class EstadioMaracana{
+	Estadio estadio = new Estadio();
+	private String nome = "Maracanã";
+    private 
 }

@@ -3,6 +3,12 @@ import java.util.Scanner;
 
 public class Principal {
 	public static void main(String[] args) {
-		System.out.println("TESTE");
+	   
+		Scanner teclado = new Scanner(System.in);
+		MenuShow menu = new MenuShow();
+		
+		menu.setEscolha(teclado.nextInt());
+		System.out.println(menu.getEscolha());
+	   
 	}
 }
