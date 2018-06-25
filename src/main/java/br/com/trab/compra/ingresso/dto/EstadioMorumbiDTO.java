@@ -11,7 +11,6 @@ public class EstadioMorumbiDTO extends EstadioDTO {
 		super(nomeEstadio, capacidade);
 		nomeEstadio = "Morumbi";
 		capacidade = 60000;
-		
 	}
 
 	public ArrayList<Double> getPrecosLugares() {
