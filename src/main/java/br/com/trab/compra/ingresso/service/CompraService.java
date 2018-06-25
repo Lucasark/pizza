@@ -26,7 +26,7 @@ public class CompraService implements CompraServiceInterface {
 	
 	Scanner entrada = new Scanner(System.in);
 	
-	public CompraService(int inicial) {
+	public CompraService() {
 		
 		this.saida = "Para as opcoes de show digite: \n [1] " + this.concertoA.getNomeBanda() + " " + this.concertoA.getNomeTurne() + " \n" +
 													"\n [2] "  + this.concertoB.getNomeBanda() + " " + this.concertoB.getNomeTurne() + " \n" +
@@ -47,9 +47,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 1) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio1.getNomeEstadio() + " para o show de " + this.concertoA.getDatasDisponiveis().get(0) + 
-						     "[1] " + this.estadio1.getTipoLugares().get(0) + " preco: " + this.estadio1.getPrecosLugares().get(0) + 
-						     "[2] " + this.estadio1.getTipoLugares().get(1) + " preco: " + this.estadio1.getPrecosLugares().get(1) +
-						     "[3] " + this.estadio1.getTipoLugares().get(2) + " preco: " + this.estadio1.getPrecosLugares().get(2);
+						     "\n[1] " + this.estadio1.getTipoLugares().get(0) + " preco: " + this.estadio1.getPrecosLugares().get(0) + 
+						     "\n[2] " + this.estadio1.getTipoLugares().get(1) + " preco: " + this.estadio1.getPrecosLugares().get(1) +
+						     "\n[3] " + this.estadio1.getTipoLugares().get(2) + " preco: " + this.estadio1.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -57,9 +57,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 2) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio2.getNomeEstadio() + " para o show de " + this.concertoA.getDatasDisponiveis().get(1) + 
-						     "[1] " + this.estadio2.getTipoLugares().get(0) + " preco: " + this.estadio2.getPrecosLugares().get(0) + 
-						     "[2] " + this.estadio2.getTipoLugares().get(1) + " preco: " + this.estadio2.getPrecosLugares().get(1) +
-						     "[3] " + this.estadio2.getTipoLugares().get(2) + " preco: " + this.estadio2.getPrecosLugares().get(2);
+						     "\n[1] " + this.estadio2.getTipoLugares().get(0) + " preco: " + this.estadio2.getPrecosLugares().get(0) + 
+						     "\n[2] " + this.estadio2.getTipoLugares().get(1) + " preco: " + this.estadio2.getPrecosLugares().get(1) +
+						     "\n[3] " + this.estadio2.getTipoLugares().get(2) + " preco: " + this.estadio2.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -67,9 +67,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 3) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio3.getNomeEstadio() + " para o show de " + this.concertoA.getDatasDisponiveis().get(2) + 
-					     "[1] " + this.estadio3.getTipoLugares().get(0) + " preco: " + this.estadio3.getPrecosLugares().get(0) + 
-					     "[2] " + this.estadio3.getTipoLugares().get(1) + " preco: " + this.estadio3.getPrecosLugares().get(1) +
-					     "[3] " + this.estadio3.getTipoLugares().get(2) + " preco: " + this.estadio3.getPrecosLugares().get(2);
+					     "\n[1] " + this.estadio3.getTipoLugares().get(0) + " preco: " + this.estadio3.getPrecosLugares().get(0) + 
+					     "\n[2] " + this.estadio3.getTipoLugares().get(1) + " preco: " + this.estadio3.getPrecosLugares().get(1) +
+					     "\n[3] " + this.estadio3.getTipoLugares().get(2) + " preco: " + this.estadio3.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -80,9 +80,9 @@ public class CompraService implements CompraServiceInterface {
 		
 		if(this.opcao == 2) {
 			this.saida = "Agora escolha uma cidade com sua respectiva data para o show da banda " + this.concertoB.getNomeBanda() + "\n" + 
-						 "[1] " + this.concertoB.getCidadesDisponiveis().get(0) + " data: " + this.concertoB.getDatasDisponiveis().get(3) +  " \n " +
-						 "[2] " + this.concertoB.getCidadesDisponiveis().get(1) + " data: " + this.concertoB.getDatasDisponiveis().get(4) +  " \n " +
-						 "[3] " + this.concertoB.getCidadesDisponiveis().get(2) + " data: " + this.concertoB.getDatasDisponiveis().get(5) ;
+						 "\n[1] " + this.concertoB.getCidadesDisponiveis().get(0) + " data: " + this.concertoB.getDatasDisponiveis().get(3) +  " \n " +
+						 "\n[2] " + this.concertoB.getCidadesDisponiveis().get(1) + " data: " + this.concertoB.getDatasDisponiveis().get(4) +  " \n " +
+						 "\n[3] " + this.concertoB.getCidadesDisponiveis().get(2) + " data: " + this.concertoB.getDatasDisponiveis().get(5) ;
 			
 			imprimirCidades(saida);
 			
@@ -90,9 +90,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 1) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio1.getNomeEstadio() + " para o show de " + this.concertoB.getDatasDisponiveis().get(3) + 
-						     "[1] " + this.estadio1.getTipoLugares().get(0) + " preco: " + this.estadio1.getPrecosLugares().get(0) + 
-						     "[2] " + this.estadio1.getTipoLugares().get(1) + " preco: " + this.estadio1.getPrecosLugares().get(1) +
-						     "[3] " + this.estadio1.getTipoLugares().get(2) + " preco: " + this.estadio1.getPrecosLugares().get(2);
+						     "\n[1] " + this.estadio1.getTipoLugares().get(0) + " preco: " + this.estadio1.getPrecosLugares().get(0) + 
+						     "\n[2] " + this.estadio1.getTipoLugares().get(1) + " preco: " + this.estadio1.getPrecosLugares().get(1) +
+						     "\n[3] " + this.estadio1.getTipoLugares().get(2) + " preco: " + this.estadio1.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -100,9 +100,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 2) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio2.getNomeEstadio() + " para o show de " + this.concertoB.getDatasDisponiveis().get(4) + 
-						     "[1] " + this.estadio2.getTipoLugares().get(0) + " preco: " + this.estadio2.getPrecosLugares().get(0) + 
-						     "[2] " + this.estadio2.getTipoLugares().get(1) + " preco: " + this.estadio2.getPrecosLugares().get(1) +
-						     "[3] " + this.estadio2.getTipoLugares().get(2) + " preco: " + this.estadio2.getPrecosLugares().get(2);
+						     "\n[1] " + this.estadio2.getTipoLugares().get(0) + " preco: " + this.estadio2.getPrecosLugares().get(0) + 
+						     "\n[2] " + this.estadio2.getTipoLugares().get(1) + " preco: " + this.estadio2.getPrecosLugares().get(1) +
+						     "\n[3] " + this.estadio2.getTipoLugares().get(2) + " preco: " + this.estadio2.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -110,9 +110,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 3) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio3.getNomeEstadio() + " para o show de " + this.concertoB.getDatasDisponiveis().get(5) + 
-					     "[1] " + this.estadio3.getTipoLugares().get(0) + " preco: " + this.estadio3.getPrecosLugares().get(0) + 
-					     "[2] " + this.estadio3.getTipoLugares().get(1) + " preco: " + this.estadio3.getPrecosLugares().get(1) +
-					     "[3] " + this.estadio3.getTipoLugares().get(2) + " preco: " + this.estadio3.getPrecosLugares().get(2);
+					     "\n[1] " + this.estadio3.getTipoLugares().get(0) + " preco: " + this.estadio3.getPrecosLugares().get(0) + 
+					     "\n[2] " + this.estadio3.getTipoLugares().get(1) + " preco: " + this.estadio3.getPrecosLugares().get(1) +
+					     "\n[3] " + this.estadio3.getTipoLugares().get(2) + " preco: " + this.estadio3.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -132,9 +132,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 1) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio1.getNomeEstadio() + " para o show de " + this.concertoC.getDatasDisponiveis().get(6) + 
-						     "[1] " + this.estadio1.getTipoLugares().get(0) + " preco: " + this.estadio1.getPrecosLugares().get(0) + 
-						     "[2] " + this.estadio1.getTipoLugares().get(1) + " preco: " + this.estadio1.getPrecosLugares().get(1) +
-						     "[3] " + this.estadio1.getTipoLugares().get(2) + " preco: " + this.estadio1.getPrecosLugares().get(2);
+						     "\n[1] " + this.estadio1.getTipoLugares().get(0) + " preco: " + this.estadio1.getPrecosLugares().get(0) + 
+						     "\n[2] " + this.estadio1.getTipoLugares().get(1) + " preco: " + this.estadio1.getPrecosLugares().get(1) +
+						     "\n[3] " + this.estadio1.getTipoLugares().get(2) + " preco: " + this.estadio1.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();
@@ -152,9 +152,9 @@ public class CompraService implements CompraServiceInterface {
 			
 			if(this.opcao == 3) {
 				this.saida = "Agora escolha um local no estadio do " + this.estadio3.getNomeEstadio() + " para o show de " + this.concertoC.getDatasDisponiveis().get(8) + 
-					     "[1] " + this.estadio3.getTipoLugares().get(0) + " preco: " + this.estadio3.getPrecosLugares().get(0) + 
-					     "[2] " + this.estadio3.getTipoLugares().get(1) + " preco: " + this.estadio3.getPrecosLugares().get(1) +
-					     "[3] " + this.estadio3.getTipoLugares().get(2) + " preco: " + this.estadio3.getPrecosLugares().get(2);
+					     "\n[1] " + this.estadio3.getTipoLugares().get(0) + " preco: " + this.estadio3.getPrecosLugares().get(0) + 
+					     "\n[2] " + this.estadio3.getTipoLugares().get(1) + " preco: " + this.estadio3.getPrecosLugares().get(1) +
+					     "\n[3] " + this.estadio3.getTipoLugares().get(2) + " preco: " + this.estadio3.getPrecosLugares().get(2);
 				imprimirOpcoes(saida);
 				
 				this.opcao = entrada.nextInt();

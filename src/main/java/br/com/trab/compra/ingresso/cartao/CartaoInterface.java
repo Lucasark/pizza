@@ -1,7 +1,5 @@
 package br.com.trab.compra.ingresso.cartao;
 
-public interface CartaoInterface {
+public class CartaoInterface {
 	
-	public void validador(int);
-
 }

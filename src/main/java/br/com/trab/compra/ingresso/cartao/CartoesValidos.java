@@ -1,5 +1,5 @@
 package br.com.trab.compra.ingresso.cartao;
 
-public class CartoesValidos {
-
+public class CartoesValidos implements CartaoInterface{
+	private inicio;
 }
