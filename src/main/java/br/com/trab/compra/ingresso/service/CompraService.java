@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class CompraService implements CompraServiceInterface {
 	
-	private int inicio;
+	
 	private int opcao;
 	private String saida;
 	
@@ -26,7 +26,7 @@ public class CompraService implements CompraServiceInterface {
 	
 	Scanner entrada = new Scanner(System.in);
 	
-	public CompraService(int inicial) {
+	public CompraService() {
 		
 		this.saida = "Para as opcoes de show digite: \n [1] " + this.concertoA.getNomeBanda() + " " + this.concertoA.getNomeTurne() + " \n" +
 													"\n [2] "  + this.concertoB.getNomeBanda() + " " + this.concertoB.getNomeTurne() + " \n" +
