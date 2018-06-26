@@ -14,13 +14,12 @@ public class Carrinho {
 		int opcao = input.nextInt();
 		input.close();		
 		return opcao;
-
-		
-		
 	}
 	
 	public static void trata(int opcao) {
-		
+		switch(opcao) {
+			
+		}
 	}
 	
 	
