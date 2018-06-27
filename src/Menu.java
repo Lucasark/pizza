@@ -8,6 +8,7 @@ public class Menu {
 	List<Estadio> estadios = new ArrayList<Estadio>(0);
 	List<Concerto> concertos = new ArrayList<Concerto>(0);
 	List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
+	List<Evento> eventos = new ArrayList<Evento>(0);
 	
 	Scanner input = new Scanner(System.in);
 	private Scanner input1;
@@ -85,9 +86,28 @@ public class Menu {
 								break;
 								
 							case 6:
+								if(ingressos.size() == 0) System.out.println("VAZIO!");
+								for(Ingresso m: ingressos) {
+									m.imprimirImgresso();
+								}
+								System.out.println("---Ingresso Impresso---");
 								break;
 								
 							case 7:
+								if(estadios.size() == 0 || concertos.size() == 0) {
+									System.out.println("Voce nao pode adicionar eventos sem ter \n estadios, concertos");
+									break;
+								}else {
+									//Evento evento = new Evento();
+									System.out.println("Escolha um estadio digitando um numero: ");
+									for(Estadio m: estadios) {
+										System.out.println(estadios.indexOf(m));
+										m.imprimirEstadio();
+									}
+									//evento = evento.leEvento();
+									//eventos.add(evento);
+									System.out.println("---Evento CRIADO!---");
+								}
 								break;
 								
 							case 8:

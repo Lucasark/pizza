@@ -38,6 +38,9 @@ public class Ingresso {
 	}
 	
 	public void imprimirImgresso() {
+		System.out.println(this.data + " - " + 
+						   this.cidade + " - " +
+						   this.preco + "\n");
 		return;
 	}
 	
