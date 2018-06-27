@@ -54,13 +54,14 @@ public class Evento {
 			System.out.println("#" + estTemp.get(0)+ "#");
 			Ingresso ingresso = new Ingresso();
 			ingresso = ingresso.leIngresso();
-			ingressos.add(ingresso);//BUGS
+			ingressos.add(ingresso);
 		}
 		Evento evento = new Evento(nomeEvento, concerto, estadio, ingressos);
 		return evento;
 	}
 	
 	public void imprimirEventos() {
+		System.out.println("");
 		return;
 	}
 	

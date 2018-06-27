@@ -7,7 +7,6 @@ public class Menu {
 	
 	List<Estadio> estadios = new ArrayList<Estadio>(0);
 	List<Concerto> concertos = new ArrayList<Concerto>(0);
-	List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
 	List<Evento> eventos = new ArrayList<Evento>(0);
 	
 	Scanner input = new Scanner(System.in);
@@ -40,8 +39,8 @@ public class Menu {
 										+ "[2] - Imprimir Estadios\n"
 										+ "[3] - Adicionar Concerto\n"
 										+ "[4] - Imprimir Estadios\n"
-										+ "[7] - Adicionar Evento\n"
-										+ "[8] - Imprimir Eventos\n"
+										+ "[5] - Adicionar Evento\n"
+										+ "[6] - Imprimir Eventos\n"
 										+ "[0] - Voltar");
 						input1 = new Scanner(System.in);
 						int eADMIN = input1.nextInt();
@@ -75,23 +74,26 @@ public class Menu {
 								}
 								System.out.println("---Concertos Impresso---");
 								break;
-								
-							case 5:
+							/*
+							FINALIDADE DE DEBUGAR!
+							NÃO APRESENTA NO MENU!
+							List<Ingresso> ingressos = new ArrayList<Ingresso>(0); -> Declarar no topo
+							case 10:
 								Ingresso ingresso = new Ingresso();
 								ingresso = ingresso.leIngresso();
 								ingressos.add(ingresso);
 								System.out.println("---Ingresso CRIADO!---");
 								break;
 								
-							case 6:
+							case 11:
 								if(ingressos.size() == 0) System.out.println("VAZIO!");
 								for(Ingresso m: ingressos) {
 									m.imprimirIngresso();
 								}
 								System.out.println("---Ingresso Impresso---");
 								break;
-								
-							case 7:
+							*/
+							case 5:
 								if(estadios.size() == 0 || concertos.size() == 0) {
 									System.out.println("Voce tem " + estadios.size() + " estadios e " + concertos.size() + " concertos");
 									break;
@@ -109,16 +111,14 @@ public class Menu {
 								}
 								break;
 								
-							case 8:
+							case 6:
 								if(eventos.size() == 0) System.out.println("VAZIO!");
 								for(Evento m: eventos) {
 									m.imprimirEventos();
 								}
 								System.out.println("---Eventos Impressos!---");
 								break;
-							case 9:
-								leNomesEstadios();
-								break;
+								
 							case 0:
 								//soisso
 								i = 0;
