@@ -11,7 +11,7 @@ public class Menu {
 	List<Concerto> concertos = new ArrayList<Concerto>(0);
 	List<Evento> eventos = new ArrayList<Evento>(0);
 	
-	private void leNomesEstadios(){
+	public void leNomesEstadios(){
 		if (estadios.size() == 0) System.out.println("Não existe estadios");
 		int k = 1;
 		for(Estadio m: estadios){   
@@ -20,7 +20,8 @@ public class Menu {
 		}
 		return;
 	}
-	private void leNomesConcertos(){
+	
+	public void leNomesConcertos(){
 		if (concertos.size() == 0) System.out.println("Não existe concertos");
 		int k = 1;
 		for(Concerto m: concertos){   
@@ -29,6 +30,17 @@ public class Menu {
 		}
 		return;
 	}
+	
+	public void leNomesEventos() {
+		if (estadios.size() == 0) System.out.println("Não existe concertos");
+		int k = 1;
+		for(Estadio m: estadios){   
+			System.out.println("[" + k + "]" + " - " + m.getNomeEstadio());
+			k++;
+		}
+		return;
+	}
+	
 	public void opcoesAdmin() {
 		System.out.println("SENHA:");
 		int senha = new Scanner(System.in).nextInt();
