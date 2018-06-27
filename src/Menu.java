@@ -38,7 +38,7 @@ public class Menu {
 						System.out.println("[1] - Adicionar Estadio\n"
 										+ "[2] - Imprimir Estadios\n"
 										+ "[3] - Adicionar Concerto\n"
-										+ "[4] - Imprimir Estadios\n"
+										+ "[4] - Imprimir Concertos\n"
 										+ "[5] - Adicionar Evento\n"
 										+ "[6] - Imprimir Eventos\n"
 										+ "[0] - Voltar");
@@ -74,17 +74,18 @@ public class Menu {
 								}
 								System.out.println("---Concertos Impresso---");
 								break;
+							
+							//FINALIDADE DE DEBUGAR!
+							//NÃO APRESENTA NO MENU!
 							/*
-							FINALIDADE DE DEBUGAR!
-							NÃO APRESENTA NO MENU!
-							List<Ingresso> ingressos = new ArrayList<Ingresso>(0); -> Declarar no topo
 							case 10:
+								List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
 								Ingresso ingresso = new Ingresso();
 								ingresso = ingresso.leIngresso();
 								ingressos.add(ingresso);
 								System.out.println("---Ingresso CRIADO!---");
 								break;
-								
+							/*
 							case 11:
 								if(ingressos.size() == 0) System.out.println("VAZIO!");
 								for(Ingresso m: ingressos) {
@@ -121,7 +122,7 @@ public class Menu {
 								
 							case 0:
 								//soisso
-								i = 0;
+								i = 1;
 								break;
 						} 
 					} while(i != 1);

@@ -5,14 +5,14 @@ import java.util.stream.Collectors;
 
 public class Evento {
 	private String nomeEvento;
-	private Concerto Concerto;
-	private Estadio Estadio;
+	private Concerto concerto;
+	private Estadio estadio;
 	private List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
 	
 	public Evento(String nomeEvento, Concerto Concerto, Estadio Estadio, List<Ingresso> ingressos) {
 		this.nomeEvento = nomeEvento;
-		this.Concerto = Concerto;
-		this.Estadio = Estadio;
+		this.concerto = Concerto;
+		this.estadio = Estadio;
 		this.ingressos = ingressos;
 	}
 	
@@ -21,13 +21,13 @@ public class Evento {
 	}
 	
 	public String getConcerto() {
-		String nomeBanda = this.Concerto.getNomeBanda();
-		String turneBanda = this.Concerto.getNomeTurne();
+		String nomeBanda = this.concerto.getNomeBanda();
+		String turneBanda = this.concerto.getNomeTurne();
 		return nomeBanda;
 	}
 	
 	public Estadio getEstadio() {
-		return Estadio;
+		return estadio;
 	}
 	
 	public List<String> getData() {
@@ -51,7 +51,7 @@ public class Evento {
 		List<String> estTemp;
 		estTemp = estadio.getlugares();
 		for (int l=0; l<estTemp.size(); l++) {
-			System.out.println("#" + estTemp.get(0)+ "#");
+			System.out.println("#" + estTemp.get(l)+ "#");
 			Ingresso ingresso = new Ingresso();
 			ingresso = ingresso.leIngresso();
 			ingressos.add(ingresso);
@@ -61,7 +61,16 @@ public class Evento {
 	}
 	
 	public void imprimirEventos() {
-		System.out.println("");
+		System.out.println("Nome do Evento: " + this.nomeEvento + "\n" 
+						+ "Nome da Banda: " + this.concerto.getNomeBanda() + "\n"
+						+ "Nome do Estadio: " + this.estadio.getNomeEstadio());
+		System.out.println("|Tipo|Dia|Local|Preço| ");
+		List<String> temp = new ArrayList<String>(0);
+		temp = estadio.getlugares();
+		for (int l=0; l<ingressos.size(); l++) {
+			System.out.println(temp.get(l));
+			this.ingressos.get(l).imprimirIngresso();
+		}
 		return;
 	}
 	
