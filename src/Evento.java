@@ -17,9 +17,11 @@ public class Evento {
 		String turneBanda = this.Concerto.getNomeTurne();
 		return nomeBanda;
 	}
+	
 	public Estadio getEstadio() {
 		return Estadio;
 	}
+	
 	public List<String> getData() {
 		return ingressos.stream().map(i -> i.getData()).collect(Collectors.toList());
 	}

@@ -13,8 +13,8 @@ public class Menu {
 	private Scanner input1;
 	
 	public int menu() {
-		System.out.println("[1] - Comprar\n"
-						+ "[2] - Ver Ingressos\n"
+		System.out.println("[1] - Comprar Ingressos\n"
+						+ "[2] - Ver Ingressos Adquiridos\n"
 						+ "[3] - Acesso ADMIN\n"
 						+ "[4] - Cancelar");
 		
@@ -41,7 +41,9 @@ public class Menu {
 										+ "[4] - Imprimir Estadios\n"
 										+ "[5] - Adicionar Ingresso\n"
 										+ "[6] - Imprimir Ingresso\n"
-										+ "[7] - Voltar");
+										+ "[8] - Adicionar Evento\n"
+										+ "[9] - Imprimir Eventos"
+										+ "[0] - Voltar");
 						input1 = new Scanner(System.in);
 						int eADMIN = input1.nextInt();
 						switch(eADMIN) {
@@ -76,12 +78,23 @@ public class Menu {
 								break;
 								
 							case 5:
+								Ingresso ingresso = new Ingresso();
+								ingresso = ingresso.leIngresso();
+								ingressos.add(ingresso);
+								System.out.println("---Ingresso CRIADO!---");
 								break;
 								
 							case 6:
 								break;
 								
 							case 7:
+								break;
+								
+							case 8:
+								break;
+								
+							case 0:
+								//soisso
 								break;
 						} 
 					} while(i != 1);
