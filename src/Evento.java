@@ -1,7 +1,3 @@
-
-//quando parar de brigar com Data, usar tipo Date
-
-
 import java.util.List;
 import java.util.stream.Collectors;
 

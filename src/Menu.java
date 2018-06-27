@@ -49,25 +49,39 @@ public class Menu {
 								Estadio estadio = new Estadio();
 								estadio = estadio.leEstadio();
 								estadios.add(estadio);
-								System.out.println("Estadio CRIADO!");
+								System.out.println("---Estadio CRIADO!---");
 								break;
+								
 							case 2:
 								if (estadios.size() == 0) System.out.println("VAZIO!");
 								for(Estadio m: estadios){   
-						              System.out.printf(m.getNomeEstadio() + " - " +
-				            		  			 		m.getLugarDireito() + " - "+
-				            		  			 		m.getLugarEsquerdo() + " - " +
-				            		  			 		m.getCentro() + " - " +
-				            		  			 		m.getSuperior() + "\n");
+									m.imprimirEstadio();
 								}
-								System.out.println("Estadios Impresso");
+								System.out.println("---Estadios Impresso---");
 								break;
+								
 							case 3:
-								System.out.println("Ingresso");
+								Concerto concerto = new Concerto();
+								concerto = concerto.leConcerto();
+								concertos.add(concerto);
+								System.out.println("---Concerto CRIADO!---");
 								break;
+								
 							case 4:
-								System.out.println("V-SUCESSO");
-								i = 1;
+								if (concertos.size() == 0) System.out.println("VAZIO!");
+								for(Concerto m: concertos){
+									m.imprimirConcerto();
+								}
+								System.out.println("---Concertos Impresso---");
+								break;
+								
+							case 5:
+								break;
+								
+							case 6:
+								break;
+								
+							case 7:
 								break;
 						} 
 					} while(i != 1);
@@ -81,14 +95,6 @@ public class Menu {
 				return 0;
 		}
 		return 1;
-	}
-	
-	private void addConcerto() {
-		System.out.println("Nome da Banda: ");
-		String nomeBanda = new Scanner(System.in).next();
-		System.out.println("Nome Turne: ");
-		String nomeTurne = new Scanner(System.in).next();
-		concertos.add(new Concerto(nomeBanda, nomeTurne));
 	}
 	
 	private void addIngresso() {

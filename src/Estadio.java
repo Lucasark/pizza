@@ -64,7 +64,12 @@ public class Estadio{
 	}
 	
 	public void imprimirEstadio() {
-		
+        System.out.printf(this.nomeEstadio + " - " +
+			 			this.LugarDireito + " - "+
+			 			this.LugarEsquerdo + " - " +
+			 			this.Centro + " - " +
+			 			this.Superior + "\n");
+        return;
 	}
 	
 }
