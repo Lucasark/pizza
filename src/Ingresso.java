@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Ingresso {
 	private String data,cidade;
-	private double preco;
+	private int preco;
 	
 	public Ingresso() {
 		return;
@@ -20,7 +20,7 @@ public class Ingresso {
 		return preco;
 	}
 
-	Ingresso(String data,String cidade, double preco) {
+	Ingresso(String data,String cidade, int preco) {
 		this.data=data;
 		this.cidade=cidade;
 		this.preco=preco;
@@ -37,10 +37,11 @@ public class Ingresso {
 		return ingresso;
 	}
 	
-	public void imprimirImgresso() {
+	public void imprimirIngresso() {
+		System.out.println("Escolha um estadio digitando um numero: ");
 		System.out.println(this.data + " - " + 
 						   this.cidade + " - " +
-						   this.preco + "\n");
+						   this.preco );
 		return;
 	}
 	

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 //import java.util.Arrays;
@@ -6,10 +7,7 @@ import java.util.Scanner;
 public class Estadio{
 	
 	private String nomeEstadio;
-	private int LugarDireito;
-	private int LugarEsquerdo;
-	private int Centro;
-	private int Superior;
+	List<Lugar> lugares = new ArrayList<Lugar>(0);
 	
 	public Estadio() {
 		return;
@@ -18,57 +16,40 @@ public class Estadio{
 	public String getNomeEstadio() {
 		return nomeEstadio;
 	}
-
-
-	public int getLugarDireito() {
-		return LugarDireito;
-	}
-
-
-	public int getLugarEsquerdo() {
-		return LugarEsquerdo;
-	}
-
-
-	public int getCentro() {
-		return Centro;
-	}
-
-
-	public int getSuperior() {
-		return Superior;
-	}
-
 	
-	public Estadio(String nomeEstadio, int LugarDireito, int LugarEsquerdo, int Centro, int Superior) {
+	public List<String> getlugares() {
+		List<String> temp = new ArrayList<String>(0);
+		for (Lugar m: lugares) {
+			temp.add(m.getTipoLugar());
+		}
+		return temp;
+	}
+	
+	public Estadio(String nomeEstadio, List<Lugar> lugares) {
 		this.nomeEstadio = nomeEstadio;
-		this.LugarDireito = LugarDireito;
-		this.LugarEsquerdo = LugarEsquerdo;
-		this.Centro = Centro;
-		this.Superior = Superior;
+		this.lugares = lugares;
 	}
 	
 	public Estadio leEstadio() {
+		int i = 0;
 		System.out.println("Nome do Estadio:");
 		String nomeEstadio = new Scanner(System.in).next();
-		System.out.println("Lugar Esquerdo:");
-		int lugarEsquerdo = new Scanner(System.in).nextInt();
-		System.out.println("Lugar Direito:");
-		int lugarDireito = new Scanner(System.in).nextInt();
-		System.out.println("Centro:");
-		int Centro = new Scanner(System.in).nextInt();
-		System.out.println("Superior:");
-		int Superior = new Scanner(System.in).nextInt();
-		Estadio estadio = new Estadio(nomeEstadio, lugarDireito, lugarEsquerdo, Centro, Superior);
+		do {
+			Lugar lugar = new Lugar();
+			lugar = lugar.leLugar();
+			lugares.add(lugar);
+			System.out.println("Digite [1] para finalizar ou [0] para continuar:");
+			i = new Scanner(System.in).nextInt();
+		} while(i != 1 || i != 1);
+		Estadio estadio = new Estadio(nomeEstadio, lugares);
 		return estadio;
 	}
 	
 	public void imprimirEstadio() {
-        System.out.printf(this.nomeEstadio + " - " +
-			 			this.LugarDireito + " - "+
-			 			this.LugarEsquerdo + " - " +
-			 			this.Centro + " - " +
-			 			this.Superior + "\n");
+        System.out.printf(this.nomeEstadio + "\n");
+        for (Lugar m: lugares) {
+        	m.imprimirLugar();
+        }
         return;
 	}
 	

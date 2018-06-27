@@ -1,15 +1,23 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Evento {
+	private String nomeEvento;
 	private Concerto Concerto;
 	private Estadio Estadio;
-	private List<Ingresso> ingressos;
+	private List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
 	
-	public Evento(Concerto Concerto, Estadio Estadio, List<Ingresso> ingressos) {
+	public Evento(String nomeEvento, Concerto Concerto, Estadio Estadio, List<Ingresso> ingressos) {
+		this.nomeEvento = nomeEvento;
 		this.Concerto = Concerto;
 		this.Estadio = Estadio;
-		this.ingressos=ingressos;
+		this.ingressos = ingressos;
+	}
+	
+	public Evento(){
+		return;
 	}
 	
 	public String getConcerto() {
@@ -35,7 +43,25 @@ public class Evento {
 		return ingressos.stream().map(i -> i.getPreco()).collect(Collectors.toList());
 	}
 	
+	public Evento leEvento(Estadio estadio, Concerto concerto) {
+		String i = "Y";
+		System.out.println("Nome do Evento:");
+		String nomeEvento = new Scanner(System.in).next();
+		System.out.println("Definir Ingresso: ");
+		List<String> estTemp;
+		estTemp = estadio.getlugares();
+		for (int l=0; l<estTemp.size(); l++) {
+			System.out.println("#" + estTemp.get(0)+ "#");
+			Ingresso ingresso = new Ingresso();
+			ingresso = ingresso.leIngresso();
+			ingressos.add(ingresso);//BUGS
+		}
+		Evento evento = new Evento(nomeEvento, concerto, estadio, ingressos);
+		return evento;
+	}
 	
-	
+	public void imprimirEventos() {
+		return;
+	}
 	
 }

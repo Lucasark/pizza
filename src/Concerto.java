@@ -39,7 +39,7 @@ public class Concerto {
 	
 	public void imprimirConcerto() {
 		System.out.printf(this.NomeBanda + " - " +
-		          this.NomeTurne);
+		          this.NomeTurne + "\n");
         return;
 	}
 }

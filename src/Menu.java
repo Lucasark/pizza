@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 public class Menu {
@@ -40,10 +40,8 @@ public class Menu {
 										+ "[2] - Imprimir Estadios\n"
 										+ "[3] - Adicionar Concerto\n"
 										+ "[4] - Imprimir Estadios\n"
-										+ "[5] - Adicionar Ingresso\n"
-										+ "[6] - Imprimir Ingresso\n"
-										+ "[8] - Adicionar Evento\n"
-										+ "[9] - Imprimir Eventos"
+										+ "[7] - Adicionar Evento\n"
+										+ "[8] - Imprimir Eventos\n"
 										+ "[0] - Voltar");
 						input1 = new Scanner(System.in);
 						int eADMIN = input1.nextInt();
@@ -88,33 +86,42 @@ public class Menu {
 							case 6:
 								if(ingressos.size() == 0) System.out.println("VAZIO!");
 								for(Ingresso m: ingressos) {
-									m.imprimirImgresso();
+									m.imprimirIngresso();
 								}
 								System.out.println("---Ingresso Impresso---");
 								break;
 								
 							case 7:
 								if(estadios.size() == 0 || concertos.size() == 0) {
-									System.out.println("Voce nao pode adicionar eventos sem ter \n estadios, concertos");
+									System.out.println("Voce tem " + estadios.size() + " estadios e " + concertos.size() + " concertos");
 									break;
 								}else {
-									//Evento evento = new Evento();
-									System.out.println("Escolha um estadio digitando um numero: ");
-									for(Estadio m: estadios) {
-										System.out.println(estadios.indexOf(m));
-										m.imprimirEstadio();
-									}
-									//evento = evento.leEvento();
-									//eventos.add(evento);
+									Evento evento = new Evento();
+									System.out.println("Escolha o estadio");
+									leNomesEstadios();
+									int eEstadio = new Scanner(System.in).nextInt();
+									System.out.println("Escolha o concerto");
+									leNomesConcertos();
+									int eConcertos = new Scanner(System.in).nextInt();
+									evento = evento.leEvento(estadios.get(eEstadio-1), concertos.get(eConcertos-1));
+									eventos.add(evento);
 									System.out.println("---Evento CRIADO!---");
 								}
 								break;
 								
 							case 8:
+								if(eventos.size() == 0) System.out.println("VAZIO!");
+								for(Evento m: eventos) {
+									m.imprimirEventos();
+								}
+								System.out.println("---Eventos Impressos!---");
 								break;
-								
+							case 9:
+								leNomesEstadios();
+								break;
 							case 0:
 								//soisso
+								i = 0;
 								break;
 						} 
 					} while(i != 1);
@@ -130,15 +137,23 @@ public class Menu {
 		return 1;
 	}
 	
-	private void addIngresso() {
-		System.out.println("Data do show do ingresso: ");
-		String data = new Scanner(System.in).next();
-		System.out.println("Cidade do show do ingresso: ");
-		String cidade = new Scanner(System.in).next();
-		System.out.println("Preco do ingresso: ");
-		Double preco = new Scanner(System.in).nextDouble();
-		ingressos.add(new Ingresso(data, cidade, preco));
+	private void leNomesEstadios(){
+		if (estadios.size() == 0) System.out.println("Não existe estadios");
+		int k = 1;
+		for(Estadio m: estadios){   
+			System.out.println("[" + k + "]" + " - " + m.getNomeEstadio());
+			k++;
+		}
+		return;
 	}
-	
+	private void leNomesConcertos(){
+		if (concertos.size() == 0) System.out.println("Não existe concertos");
+		int k = 1;
+		for(Concerto m: concertos){   
+			System.out.println("[" + k + "]" + " - " + m.getNomeBanda());
+			k++;
+		}
+		return;
+	}
 }
 
