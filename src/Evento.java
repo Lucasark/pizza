@@ -19,7 +19,6 @@ public class Evento {
 	public String getConcerto() {
 		String nomeBanda = this.Concerto.getNomeBanda();
 		String turneBanda = this.Concerto.getNomeTurne();
-		
 		return nomeBanda;
 	}
 	public Estadio getEstadio() {
