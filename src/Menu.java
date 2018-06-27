@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Menu {
 	
 	List<Estadio> estadios = new ArrayList<Estadio>(0);
+	List<Concerto> concertos = new ArrayList<Concerto>(0);
+	List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
 	
 	Scanner input = new Scanner(System.in);
 	private Scanner input1;
@@ -21,6 +23,7 @@ public class Menu {
 		switch(opcao) {
 			case 1:
 				System.out.println("1");
+				
 				break;
 			case 2:
 				System.out.println("2");
@@ -78,6 +81,24 @@ public class Menu {
 				return 0;
 		}
 		return 1;
+	}
+	
+	private void addConcerto() {
+		System.out.println("Nome da Banda: ");
+		String nomeBanda = new Scanner(System.in).next();
+		System.out.println("Nome Turne: ");
+		String nomeTurne = new Scanner(System.in).next();
+		concertos.add(new Concerto(nomeBanda, nomeTurne));
+	}
+	
+	private void addIngresso() {
+		System.out.println("Data do show do ingresso: ");
+		String data = new Scanner(System.in).next();
+		System.out.println("Cidade do show do ingresso: ");
+		String cidade = new Scanner(System.in).next();
+		System.out.println("Preco do ingresso: ");
+		Double preco = new Scanner(System.in).nextDouble();
+		ingressos.add(new Ingresso(data, cidade, preco));
 	}
 	
 }
