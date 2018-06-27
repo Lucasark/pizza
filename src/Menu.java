@@ -33,18 +33,31 @@ public class Menu {
 					int i = 0;
 					do {
 						System.out.println("[1] - Adicionar Estadio\n"
-										+ "[2] - Adicionar Concerto\n"
-										+ "[3] - Adicionar Ingresso\n"
-										+ "[4] - Voltar");
+										+ "[2] - Imprimir Estadios\n"
+										+ "[3] - Adicionar Concerto\n"
+										+ "[4] - Imprimir Estadios\n"
+										+ "[5] - Adicionar Ingresso\n"
+										+ "[6] - Imprimir Ingresso\n"
+										+ "[7] - Voltar");
 						input1 = new Scanner(System.in);
 						int eADMIN = input1.nextInt();
 						switch(eADMIN) {
 							case 1:
-								addEstadio();
+								Estadio estadio = new Estadio();
+								estadio = estadio.leEstadio();
+								estadios.add(estadio);
 								System.out.println("Estadio CRIADO!");
 								break;
 							case 2:
-								System.out.println("Concerto");
+								if (estadios.size() == 0) System.out.println("VAZIO!");
+								for(Estadio m: estadios){   
+						              System.out.printf(m.getNomeEstadio() + " - " +
+				            		  			 		m.getLugarDireito() + " - "+
+				            		  			 		m.getLugarEsquerdo() + " - " +
+				            		  			 		m.getCentro() + " - " +
+				            		  			 		m.getSuperior() + "\n");
+								}
+								System.out.println("Estadios Impresso");
 								break;
 							case 3:
 								System.out.println("Ingresso");
@@ -65,21 +78,6 @@ public class Menu {
 				return 0;
 		}
 		return 1;
-	}
-	private void addEstadio() {
-		//int i = 0;
-		System.out.println("Nome do Estadio:");
-		String nomeEstadio = new Scanner(System.in).next();
-		System.out.println("Lugar Esquerdo:");
-		int lugarEsquerdo = new Scanner(System.in).nextInt();
-		System.out.println("Lugar Direito:");
-		int lugarDireito = new Scanner(System.in).nextInt();
-		System.out.println("Centro:");
-		int Centro = new Scanner(System.in).nextInt();
-		System.out.println("Superior:");
-		int Superior = new Scanner(System.in).nextInt();
-		estadios.add(new Estadio(nomeEstadio, lugarDireito, lugarEsquerdo, Centro, Superior));
-		return;
 	}
 	
 }
