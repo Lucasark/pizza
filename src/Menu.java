@@ -11,6 +11,8 @@ public class Menu {
 	List<Concerto> concertos = new ArrayList<Concerto>(0);
 	List<Evento> eventos = new ArrayList<Evento>(0);
 	
+	Scanner teclado = new Scanner(System.in);
+	
 	public void leNomesEstadios(){
 		if (estadios.size() == 0) System.out.println("Não existe estadios");
 		int k = 1;
@@ -43,7 +45,7 @@ public class Menu {
 	
 	public void opcoesAdmin() {
 		System.out.println("SENHA:");
-		int senha = new Scanner(System.in).nextInt();
+		int senha = teclado.nextInt();
 		if (senha == 12345) {
 			int i = 0;
 			do {
@@ -54,7 +56,7 @@ public class Menu {
 								+ "[5] - Adicionar Evento\n"
 								+ "[6] - Imprimir Eventos\n"
 								+ "[0] - Voltar");
-				int eADMIN = new Scanner(System.in).nextInt();
+				int eADMIN = teclado.nextInt();
 				switch(eADMIN) {
 					case 1:
 						Estadio estadio = new Estadio();
@@ -113,10 +115,10 @@ public class Menu {
 							Evento evento = new Evento();
 							System.out.println("Escolha o estadio");
 							leNomesEstadios();
-							int eEstadio = new Scanner(System.in).nextInt();
+							int eEstadio = teclado.nextInt();
 							System.out.println("Escolha o concerto");
 							leNomesConcertos();
-							int eConcertos = new Scanner(System.in).nextInt();
+							int eConcertos = teclado.nextInt();
 							evento = evento.leEvento(estadios.get(eEstadio-1), concertos.get(eConcertos-1));
 							eventos.add(evento);
 							System.out.println("---Evento CRIADO!---");
@@ -146,7 +148,7 @@ public class Menu {
 		
 	}
 	public void opcoesCliente() {
-		
+
 	}
 }
 
