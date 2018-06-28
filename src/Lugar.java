@@ -32,7 +32,6 @@ public class Lugar {
 	}
 	
 	public void imprimirLugar() {
-		System.out.println("Escolha um estadio digitando um numero: ");
 		System.out.println(this.TipoLugar + " - " + 
 						   this.qtd + "\n");
 		return;

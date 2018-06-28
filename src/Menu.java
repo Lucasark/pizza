@@ -144,9 +144,16 @@ public class Menu {
 			System.out.println("Senha Incorreta");
 		}
 	}
-	public void opcoesCompraCliente() {
-		
+	public int opcoesCompraCliente() {
+		int a = 1;
+			if(eventos.size() == 0) System.out.println("VAZIO!");
+			for(Evento m: eventos) {
+				m.imprimirEventos();
+			}
+			System.out.println("---Eventos Impressos!---");
+		return a;
 	}
+	
 	public void opcoesCliente() {
 
 	}

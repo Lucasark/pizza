@@ -3,8 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-	List<Cliente> clientes = new ArrayList<Cliente>(0);
+	
     public static void main(String[] args) {
+    	List<Cliente> clientes = new ArrayList<Cliente>(0);
     	int h = 0;
     	Menu menu = new Menu();
     	Scanner input = new Scanner(System.in);
@@ -17,7 +18,24 @@ public class Principal {
     		int opcao = input.nextInt();
     		switch(opcao) {
 				case 1:
-					menu.opcoesCompraCliente();
+					int a = menu.opcoesCompraCliente();
+					if (clientes.size() == 0) {
+						System.out.println("Não existe cliente\n - Criar novo cliente [1] Sim [0] Cancelar");
+						Scanner input2 = new Scanner(System.in);
+						int IO = input2.nextInt();
+						if (IO == 1) {
+							Cliente cliente = new Cliente();
+							cliente = cliente.leCliente();
+							clientes.add(cliente);
+							System.out.println("----Cliente criado----");
+						}
+					}
+					else {
+						System.out.println("Selecione o seu cliente");
+						for(Cliente m: clientes) {
+				    		System.out.println(m.getnome());
+				    	}
+					}
 					break;
 				case 2:
 					menu.opcoesCliente();
@@ -31,12 +49,5 @@ public class Principal {
 					break;
     		}
     	}while (h != 1);
-    }
-    
-    public void imprimirClientes() {
-    	for(Cliente m: clientes) {
-    		System.out.println(m.getnome());
-    	}
-    	return;
     }
 }
