@@ -143,7 +143,7 @@ public class Menu {
 		}
 	}
 	public void opcoesCompraCliente() {
-		System.out.println("Clientes");
+		
 	}
 	public void opcoesCliente() {
 		
