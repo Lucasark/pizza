@@ -26,6 +26,10 @@ public class Evento {
 		return nomeBanda;
 	}
 	
+	public String getNomeEvento() {
+		return nomeEvento;
+	}
+	
 	public Estadio getEstadio() {
 		return estadio;
 	}

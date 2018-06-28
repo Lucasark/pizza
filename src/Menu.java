@@ -32,10 +32,10 @@ public class Menu {
 	}
 	
 	public void leNomesEventos() {
-		if (estadios.size() == 0) System.out.println("Não existe concertos");
+		if (eventos.size() == 0) System.out.println("Não existe eventos");
 		int k = 1;
-		for(Estadio m: estadios){   
-			System.out.println("[" + k + "]" + " - " + m.getNomeEstadio());
+		for(Evento m: eventos){   
+			System.out.println("[" + k + "]" + " - " + m.getNomeEvento());
 			k++;
 		}
 		return;
@@ -142,15 +142,17 @@ public class Menu {
 			System.out.println("Senha Incorreta");
 		}
 	}
+
 	public int opcoesCompraCliente() {
 		int a = 1;
 			if(eventos.size() == 0) System.out.println("VAZIO!");
 			for(Evento m: eventos) {
 				m.imprimirEventos();
+				System.out.println("\n");
 			}
 			System.out.println("---Eventos Impressos!---");
 		return a;
-	}
+	}	
 	
 	public void opcoesCliente() {
 		

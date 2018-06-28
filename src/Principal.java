@@ -6,7 +6,9 @@ public class Principal {
 	
     public static void main(String[] args) {
     	List<Cliente> clientes = new ArrayList<Cliente>(0);
+    	Carrinho carrinho;
     	int h = 0;
+    	int total = 0;
     	Menu menu = new Menu();
     	Scanner input = new Scanner(System.in);
     	do {
@@ -31,10 +33,17 @@ public class Principal {
 						}
 					}
 					else {
-						System.out.println("Selecione o seu cliente");
+						System.out.println("Selecione o Cliente:");
+						int q = 1;
 						for(Cliente m: clientes) {
-				    		System.out.println(m.getnome());
+				    		System.out.println("[" + q + "]"+m.getnome());
 				    	}
+						System.out.println(clientes.get(q-1).getSenha());
+						System.out.print("Digite sua senha:");
+						int w = input.nextInt();
+						if (w == clientes.get(q-1).getSenha()) {
+							menu.leNomesEventos();
+						}
 					}
 					break;
 				case 2:
