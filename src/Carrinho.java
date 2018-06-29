@@ -32,5 +32,16 @@ public class Carrinho {
 		Carrinho carrinho = new Carrinho(itens, quantidade);
 		return carrinho;
 	}
+	
+	public void imprimirCarrinho() {
+		if(this.carrinho.size() != 0) {
+			for(int i = 0; i < this.carrinho.size() ; i++) {
+				System.out.println("["+ i + "]" + " - " + this.carrinho.get(i));
+			}
+			System.out.println("\n"+this.quantidade);
+		}else {
+			System.out.println("Seu carrinho esta vazio.");
+		}
+	}
 }
 	

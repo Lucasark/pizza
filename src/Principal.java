@@ -23,8 +23,7 @@ public class Principal {
 					int a = menu.opcoesCompraCliente();
 					if (clientes.size() == 0) {
 						System.out.println("Não existe cliente\n - Criar novo cliente [1] Sim [0] Cancelar");
-						Scanner input2 = new Scanner(System.in);
-						int IO = input2.nextInt();
+						int IO = input.nextInt();
 						if (IO == 1) {
 							Cliente cliente = new Cliente();
 							cliente = cliente.leCliente();
@@ -47,7 +46,24 @@ public class Principal {
 					}
 					break;
 				case 2:
-					menu.opcoesCliente();
+					if(clientes.size() == 0) {
+						System.out.println("Cliente nao existe!");
+						break;
+					}
+					else {
+						System.out.println("Selecione o Cliente");
+						int q = 1;
+						for(Cliente m: clientes) {
+							System.out.println("[" + q + "]" + m.getnome());
+							q++;
+						}
+						System.out.println(clientes.get(q-1).getSenha()); // DEBUG
+						System.out.println("Digite sua senha: ");
+						int w = input.nextInt();
+						if(w == clientes.get(q-1).getSenha()) {
+							//menu.opcoesCliente();
+						}
+					}
 					break;
 				case 3:
 					menu.opcoesAdmin();

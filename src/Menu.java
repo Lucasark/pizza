@@ -157,7 +157,8 @@ public class Menu {
 	}	
 	
 	public void opcoesCliente() {
-
+		
+		//carrinho.imprimirCarrinho();
 	}
 }
 
