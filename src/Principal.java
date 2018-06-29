@@ -78,7 +78,7 @@ public class Principal {
 						System.out.println("Digite sua senha: ");
 						int w = input.nextInt();
 						if(w == clientes.get(q-1).getSenha()) {
-							//menu.opcoesCliente();
+							menu.opcoesCliente(carrinhos.get(q-1).getCarrinho());
 						}
 					}
 					break;

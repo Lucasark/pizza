@@ -33,12 +33,12 @@ public class Carrinho {
 		return carrinho;
 	}
 	
-	public void imprimirCarrinho() {
-		if(this.carrinho.size() != 0) {
-			for(int i = 0; i < this.carrinho.size() ; i++) {
-				System.out.println("["+ i + "]" + " - " + this.carrinho.get(i));
+	public void imprimirCarrinho(List<String> carrinho) {
+		if(carrinho.size() != 0) {
+			for(int i = 0; i < carrinho.size() ; i++) {
+				System.out.println("["+ i + "]" + " - " + carrinho.get(i));
 			}
-			System.out.println("\n"+this.quantidade);
+			System.out.println("\n"+ carrinho.size());
 		}else {
 			System.out.println("Seu carrinho esta vazio.");
 		}
