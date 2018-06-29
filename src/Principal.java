@@ -50,14 +50,15 @@ public class Principal {
 							List<String> temp = new ArrayList<String>(0);
 							do {
 								menu.leNomesEventos();
-								w = input.nextInt();
-								temp.add(e);
+								int eNumeroEvento = input.nextInt();
+								String nomeEvento = menu.eventos.get(eNumeroEvento).getNomeEvento();
+								temp.add(nomeEvento);
 								System.out.println("Deseja Continuar? [0] Sim [1] Não");
 								y = input.nextInt();
 								F++;
 							} while (y != 1);
-							carrinhos.get(q-1);
 							
+							carrinhos.add();
 						}
 					}
 					break;
