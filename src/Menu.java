@@ -33,14 +33,17 @@ public class Menu {
 		return;
 	}
 	
-	public void leNomesEventos() {
-		if (eventos.size() == 0) System.out.println("Não existe eventos");
+	public int leNomesEventos() {
+		if (eventos.size() == 0) {
+			System.out.println("Não existe eventos");
+			return 1;
+		}
 		int k = 1;
 		for(Evento m: eventos){   
 			System.out.println("[" + k + "]" + " - " + m.getNomeEvento());
 			k++;
 		}
-		return;
+		return 0;
 	}
 	
 	public void opcoesAdmin() {

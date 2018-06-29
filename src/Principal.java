@@ -19,6 +19,7 @@ public class Principal {
 					  + "[0] - Cancelar");
     		int opcao = input.nextInt();
     		switch(opcao) {
+    			//BUG NO SELECIONAR CLIENTE
 				case 1:
 					int a = menu.opcoesCompraCliente();
 					if (clientes.size() == 0) {
@@ -35,30 +36,38 @@ public class Principal {
 					}
 					else {
 						System.out.println("Selecione o Cliente:");
-						int q = 1;
+						int loop = 1;
 						for(Cliente m: clientes) {
-				    		System.out.println("[" + q + "]"+m.getnome());
-				    		q++;
+				    		System.out.println("[" + loop + "]"+m.getnome());
 				    	}
+						int q = input.nextInt();
 						//System.out.println(clientes.get(q-1).getSenha());
 						System.out.print("Digite sua senha:");
 						int senha = input.nextInt();
 						if (senha == clientes.get(q-1).getSenha()) {
 							//----A.FAMIGERADA.COMPRA.COM
 							System.out.println("Selecionar Evento: ");
-							int y = 0, F =0;
+							int y = 0;
 							List<String> temp = new ArrayList<String>(0);
 							do {
-								menu.leNomesEventos();
-								int eNumeroEvento = input.nextInt();
-								String nomeEvento = menu.eventos.get(eNumeroEvento).getNomeEvento();
-								temp.add(nomeEvento);
-								System.out.println("Deseja Continuar? [0] Sim [1] Não");
-								y = input.nextInt();
-								F++;
+								int eInt  = menu.leNomesEventos();
+								if (eInt == 1) {
+									y = 1;
+								}
+								else {
+									int eNumeroEvento = input.nextInt();
+									String nomeEvento = menu.eventos.get(eNumeroEvento).getNomeEvento();
+									temp.add(nomeEvento);
+									System.out.println("Deseja Continuar? [0] Sim [1] Não");
+									y = input.nextInt();
+								}
 							} while (y != 1);
-							
-							carrinhos.add();
+							carrinhos.get(q-1).setCarrinho(temp);
+							//carrinhos.add();
+							//
+							//MOSTRAR UMA TELA DE CONFIRMAÇÃO
+							//ADD CARRINHO
+							//ultimo AUTENTICAÇÃO CARTÃO ->ANNE
 						}
 					}
 					break;
