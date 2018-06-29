@@ -156,9 +156,9 @@ public class Menu {
 		return a;
 	}	
 	
-	public void opcoesCliente() {
-		
-		//carrinho.imprimirCarrinho();
+	public void opcoesCliente(List<String> m) {
+		Carrinho carrinho  = new Carrinho();
+		carrinho.imprimirCarrinho(m);
 	}
 }
 
