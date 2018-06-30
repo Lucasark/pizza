@@ -29,9 +29,9 @@ public class Ingresso {
 	
 	public Ingresso leIngresso() {
 		System.out.println("Data:");
-		String data = input.next();
+		String data = input.nextLine();
 		System.out.println("Cidade:");
-		String cidade = input.next();
+		String cidade = input.nextLine();
 		System.out.println("Preço:");
 		float preco = input.nextFloat();
 		Ingresso ingresso = new Ingresso(data, cidade, preco);

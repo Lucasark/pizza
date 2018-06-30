@@ -56,9 +56,9 @@ public class Cliente {
 	public Cliente leCliente() {
 		
 		System.out.println("Nome do cliente: \n");
-		String nome = teclado.next();
+		String nome = teclado.nextLine();
 		System.out.println("Numero do cpf: \n");
-		String cpf = teclado.next();
+		String cpf = teclado.nextLine();
 		System.out.println("Numero da senha: \n");
 		int senha = teclado.nextInt();
 		Cartao cartao = new Cartao();

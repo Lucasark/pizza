@@ -41,9 +41,9 @@ public class Cartao {
 	
 	public Cartao leCartao() {
 		System.out.println("Digite o numero do cartao: \n");
-		String numeroCartao = teclado.next();
+		String numeroCartao = teclado.nextLine();
 		System.out.println("Digite a validade do cartao no formato MM/AA: \n");
-		String validadeCartao = teclado.next();
+		String validadeCartao = teclado.nextLine();
 		System.out.println("Digite o codigo de seguranca do cartao com 3 digitos: \n");
 		int codigoSeguranca = teclado.nextInt();
 		Cartao cartao = new Cartao(numeroCartao, validadeCartao, codigoSeguranca);

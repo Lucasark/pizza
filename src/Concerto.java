@@ -31,9 +31,9 @@ public class Concerto {
 	
 	public Concerto leConcerto() {
 		System.out.println("Nome da Banda:");
-		String nomeBanda = input.next();
+		String nomeBanda = input.nextLine();
 		System.out.println("Nome Turne:");
-		String nomeTurne = input.next();
+		String nomeTurne = input.nextLine();
 		Concerto concerto = new Concerto(nomeBanda, nomeTurne);
 		return concerto;
 	}

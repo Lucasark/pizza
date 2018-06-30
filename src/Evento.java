@@ -52,7 +52,7 @@ public class Evento {
 	
 	public Evento leEvento(Estadio estadio, Concerto concerto) {
 		System.out.println("Nome do Evento:");
-		String nomeEvento = input.next();
+		String nomeEvento = input.nextLine();
 		System.out.println("Definir Ingresso: ");
 		List<String> estTemp;
 		estTemp = estadio.getlugares();

@@ -25,7 +25,7 @@ public class Lugar {
 	
 	public Lugar leLugar() {
 		System.out.println("Tipo do Lugar:");
-		String tipoLugar = input.next();
+		String tipoLugar = input.nextLine();
 		System.out.println("Quantidade:");
 		int qtd = input.nextInt();
 		Lugar lugar = new Lugar(tipoLugar, qtd);

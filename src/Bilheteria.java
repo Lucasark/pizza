@@ -92,10 +92,11 @@ public class Bilheteria {
 							if(validade == true) {
 								System.out.println("CARTAO VALIDADO COM SUCESSO!");
 								System.out.println("Compra realizada!");
+								itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
 							}else {
 								System.out.println("DADOS INVALIDOS");
 								System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
-								opcao = 0;
+								itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
 							}
 						}
 					}
@@ -117,7 +118,7 @@ public class Bilheteria {
 						System.out.println(clientes.get(q-2).getSenha());
 						if(w == clientes.get(q-2).getSenha()) {
 							//ver se carrinho esta vazio
-							//fazer a logica de pegar os itens do carinho do cliente
+							//fazer a logica de pegar os itens do carrinho do cliente
 							//com bug violando
 							menu.opcoesCliente(carrinhos.get(q-2).getCarrinho());
 						}

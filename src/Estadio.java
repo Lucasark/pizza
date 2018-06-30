@@ -34,7 +34,7 @@ public class Estadio{
 	public Estadio leEstadio() {
 		int i = 0;
 		System.out.println("Nome do Estadio:");
-		String nomeEstadio = input.next();
+		String nomeEstadio = input.nextLine();
 		do {
 			Lugar lugar = new Lugar();
 			lugar = lugar.leLugar();
