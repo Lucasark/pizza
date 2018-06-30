@@ -93,7 +93,7 @@ public class Bilheteria {
 					break;
 				case 2:
 					if(clientes.size() == 0) {
-						System.out.println("Cliente nao existe!");
+						System.out.println("Não existe clientes");
 						break;
 					}
 					else {
@@ -103,11 +103,14 @@ public class Bilheteria {
 							System.out.println("[" + q + "]" + m.getnome());
 							q++;
 						}
-						System.out.println(clientes.get(q-1).getSenha()); // DEBUG
 						System.out.println("Digite sua senha: ");
 						int w = input.nextInt();
-						if(w == clientes.get(q-1).getSenha()) {
-							menu.opcoesCliente(carrinhos.get(q-1).getCarrinho());
+						System.out.println(clientes.get(q-2).getSenha());
+						if(w == clientes.get(q-2).getSenha()) {
+							//ver se carrinho esta vazio
+							//fazer a logica de pegar os itens do carinho do cliente
+							//com bug violando
+							menu.opcoesCliente(carrinhos.get(q-2).getCarrinho());
 						}
 					}
 					break;
