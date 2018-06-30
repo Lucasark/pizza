@@ -38,7 +38,7 @@ public class Carrinho {
 			for(int i = 0; i < carrinho.size() ; i++) {
 				System.out.println("["+ i + "]" + " - " + carrinho.get(i));
 			}
-			System.out.println("\n"+ carrinho.size());
+			System.out.println("\n[NUMERO DE TIPOS DE LUGARES ADQUIRIDOS]: "+ carrinho.size());
 		}else {
 			System.out.println("Seu carrinho esta vazio.");
 		}

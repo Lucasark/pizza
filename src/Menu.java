@@ -160,12 +160,15 @@ public class Menu {
 
 	public int opcoesCompraCliente() {
 		int a = 1;
-			if(eventos.size() == 0) System.out.println("VAZIO!");
-			for(Evento m: eventos) {
-				m.imprimirEventos();
-				System.out.println("\n");
+			if(eventos.size() == 0) { 
+				System.out.println("VAZIO!");
+			}else {
+				for(Evento m: eventos) {
+					m.imprimirEventos();
+					System.out.println("\n");
+				}
+				System.out.println("---Eventos Impressos!---");
 			}
-			System.out.println("---Eventos Impressos!---");
 		return a;
 	}	
 	
