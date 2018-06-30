@@ -84,10 +84,19 @@ public class Bilheteria {
 							Carrinho carrinho = new Carrinho(carrinhos.get(q-1).getCarrinho(), carrinhos.get(q-1).getQuantidade());
 							carrinhos.add(carrinho);
 							carrinhos.get(q-1).dadosCarrinho(qtdeTotal);
-							//
-							//MOSTRAR UMA TELA DE CONFIRMAÇÃO
-							//ADD CARRINHO
-							//ultimo AUTENTICAÇÃO CARTÃO ->ANNE
+							
+							System.out.println("Para finalizar sua compra digite [1] para verificar seus dados do cartao serao validados: ");
+							boolean validade = clientes.get(q-1).getCartao().validaCartao(clientes.get(q-1).getCartao().getNumeroCartao(),
+																	   clientes.get(q-1).getCartao().getValidadeCartao(),
+																	   clientes.get(q-1).getCartao().getCodigoSeguranca());
+							if(validade == true) {
+								System.out.println("CARTAO VALIDADO COM SUCESSO!");
+								System.out.println("Compra realizada!");
+							}else {
+								System.out.println("DADOS INVALIDOS");
+								System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
+								opcao = 0;
+							}
 						}
 					}
 					break;

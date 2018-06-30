@@ -50,5 +50,20 @@ public class Cartao {
 		return cartao;
 	}
 	
+	public boolean validaCartao(String numero, String validade, int codSeguranca) {
+		boolean valido = false;
+		char caractereValidador = validade.charAt(2);
+		String stringValidador = String.valueOf(codSeguranca);
+		if(numero.length() == 19) {
+			if(caractereValidador == '/' && validade.length() == 5) {
+				if(stringValidador.length() == 3) {
+					valido = true;
+					return valido;
+				}
+			}
+		}
+		return valido;
+	}
+	
 	
 }
