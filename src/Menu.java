@@ -40,9 +40,19 @@ public class Menu {
 		}
 		int k = 1;
 		for(Evento m: eventos){   
-			System.out.println("[" + k + "]" + " - " + eventos.get(k-1).getNomeEvento());
+			System.out.println("[" + k + "]" + " - "); m.imprimirEventos();
 			k++;
 		}
+		return 0;
+	}
+	
+	public int leIngressosEvento(int index) {
+		if(eventos.size() == 0) {
+			System.out.println("Não existe eventos");
+		}
+		
+		eventos.get(index).imprimirIngressoEvento();
+		
 		return 0;
 	}
 	

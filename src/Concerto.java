@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Concerto {
 	private String NomeBanda;
 	private String NomeTurne;
+	Scanner input = new Scanner(System.in);
 	
 	public Concerto() {
 		return;
@@ -30,9 +31,9 @@ public class Concerto {
 	
 	public Concerto leConcerto() {
 		System.out.println("Nome da Banda:");
-		String nomeBanda = new Scanner(System.in).next();
+		String nomeBanda = input.next();
 		System.out.println("Nome Turne:");
-		String nomeTurne = new Scanner(System.in).next();
+		String nomeTurne = input.next();
 		Concerto concerto = new Concerto(nomeBanda, nomeTurne);
 		return concerto;
 	}

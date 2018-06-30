@@ -8,6 +8,7 @@ public class Evento {
 	private Concerto concerto;
 	private Estadio estadio;
 	private List<Ingresso> ingressos = new ArrayList<Ingresso>(0);
+	Scanner input = new Scanner(System.in);
 	
 	public Evento(String nomeEvento, Concerto Concerto, Estadio Estadio, List<Ingresso> ingressos) {
 		this.nomeEvento = nomeEvento;
@@ -23,15 +24,17 @@ public class Evento {
 	public String getConcerto() {
 		String nomeBanda = this.concerto.getNomeBanda();
 		String turneBanda = this.concerto.getNomeTurne();
-		return nomeBanda;
+		String dadosConcerto = nomeBanda + " " + turneBanda;
+		return dadosConcerto;
 	}
 	
 	public String getNomeEvento() {
 		return nomeEvento;
 	}
 	
-	public Estadio getEstadio() {
-		return estadio;
+	public String getEstadio() {
+		String nomeEstadio = this.estadio.getNomeEstadio();
+		return nomeEstadio;
 	}
 	
 	public List<String> getData() {
@@ -43,14 +46,13 @@ public class Evento {
 	}
 	
 	
-	public List<Double> getPreco() {
+	public List<Float> getPreco() {
 		return ingressos.stream().map(i -> i.getPreco()).collect(Collectors.toList());
 	}
 	
 	public Evento leEvento(Estadio estadio, Concerto concerto) {
-		String i = "Y";
 		System.out.println("Nome do Evento:");
-		String nomeEvento = new Scanner(System.in).next();
+		String nomeEvento = input.next();
 		System.out.println("Definir Ingresso: ");
 		List<String> estTemp;
 		estTemp = estadio.getlugares();
@@ -76,6 +78,38 @@ public class Evento {
 			this.ingressos.get(l).imprimirIngresso();
 		}
 		return;
+	}
+
+	public List<Ingresso> getIngressos() {
+		return ingressos;
+	}
+	
+	public void imprimirIngressoEvento() {
+		List<String> temp = new ArrayList<String>(0);
+		temp = estadio.getlugares();
+		for(int i = 0; i < ingressos.size(); i++) {
+			System.out.println("["+(i+1)+"]"+" - ");
+			System.out.println(temp.get(i));
+			this.ingressos.get(i).imprimirIngresso();
+		}
+		return;
+	}
+	
+	public String getIngressoEvento(int index) {
+		String dadosIngressoEvento = null;
+		List<String> temp = new ArrayList<String>(0);
+		temp = estadio.getlugares();
+		dadosIngressoEvento = temp.get(index) + " " + this.ingressos.get(index).getIngressoRequerido();
+		return dadosIngressoEvento;
+	}
+	
+	public float getCalculaIngressosEvento(int index, int x ) {
+		float total = this.ingressos.get(index).getPreco() * x;
+		return total;
+	}
+
+	public void setIngressos(List<Ingresso> ingressos) {
+		this.ingressos = ingressos;
 	}
 	
 }

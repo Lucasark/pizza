@@ -8,6 +8,7 @@ public class Estadio{
 	
 	private String nomeEstadio;
 	List<Lugar> lugares = new ArrayList<Lugar>(0);
+	Scanner input = new Scanner(System.in);
 	
 	public Estadio() {
 		return;
@@ -33,13 +34,13 @@ public class Estadio{
 	public Estadio leEstadio() {
 		int i = 0;
 		System.out.println("Nome do Estadio:");
-		String nomeEstadio = new Scanner(System.in).next();
+		String nomeEstadio = input.next();
 		do {
 			Lugar lugar = new Lugar();
 			lugar = lugar.leLugar();
 			lugares.add(lugar);
 			System.out.println("Digite [1] para finalizar ou [0] para continuar:");
-			i = new Scanner(System.in).nextInt();
+			i = input.nextInt();
 		} while(i != 1 || i != 1);
 		Estadio estadio = new Estadio(nomeEstadio, lugares);
 		return estadio;

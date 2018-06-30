@@ -43,5 +43,12 @@ public class Carrinho {
 			System.out.println("Seu carrinho esta vazio.");
 		}
 	}
+	
+	public void dadosCarrinho(float total) {
+		System.out.println("[EVENTO] [BANDA] [TURNE] [ESTADIO] [TIPO LUGAR]  [DATA]  [CIDADE] [VALOR] \n");
+		this.imprimirCarrinho(this.carrinho);
+		System.out.println("[QUANTIDADE DE ITENS]: "+this.getQuantidade() +" [TOTAL]: R$"+ total );
+	}
+	
 }
 	

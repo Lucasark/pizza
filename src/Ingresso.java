@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Ingresso {
 	private String data,cidade;
 	private float preco;
+	Scanner input = new Scanner(System.in);
 	
 	public Ingresso() {
 		return;
@@ -16,7 +17,7 @@ public class Ingresso {
 		return cidade;
 	}
 
-	public double getPreco() {
+	public float getPreco() {
 		return preco;
 	}
 
@@ -28,11 +29,11 @@ public class Ingresso {
 	
 	public Ingresso leIngresso() {
 		System.out.println("Data:");
-		String data = new Scanner(System.in).next();
+		String data = input.next();
 		System.out.println("Cidade:");
-		String cidade = new Scanner(System.in).next();
+		String cidade = input.next();
 		System.out.println("Preço:");
-		float preco = new Scanner(System.in).nextFloat();
+		float preco = input.nextFloat();
 		Ingresso ingresso = new Ingresso(data, cidade, preco);
 		return ingresso;
 	}
@@ -43,5 +44,12 @@ public class Ingresso {
 						   this.preco );
 		return;
 	}
+	
+	public String getIngressoRequerido() {
+		String ingressoRequerido = this.data + " " + this.cidade + " " + this.preco;
+		return ingressoRequerido;
+	}
+	
+	
 	
 }

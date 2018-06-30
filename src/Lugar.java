@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Lugar {
 	private String TipoLugar;
 	private int qtd;
+	Scanner input = new Scanner(System.in);
 	
 	public Lugar() {
 		return;
@@ -24,9 +25,9 @@ public class Lugar {
 	
 	public Lugar leLugar() {
 		System.out.println("Tipo do Lugar:");
-		String tipoLugar = new Scanner(System.in).next();
+		String tipoLugar = input.next();
 		System.out.println("Quantidade:");
-		int qtd = new Scanner(System.in).nextInt();
+		int qtd = input.nextInt();
 		Lugar lugar = new Lugar(tipoLugar, qtd);
 		return lugar;
 	}
