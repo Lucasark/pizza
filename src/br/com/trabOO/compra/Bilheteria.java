@@ -1,6 +1,9 @@
+package br.com.trabOO.compra;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import br.com.trabOO.main.Menu;
 
 public class Bilheteria {
 	public Bilheteria() {
@@ -86,17 +89,25 @@ public class Bilheteria {
 							carrinhos.get(q-1).dadosCarrinho(qtdeTotal);
 							
 							System.out.println("Para finalizar sua compra digite [1] para verificar seus dados do cartao serao validados: ");
-							boolean validade = clientes.get(q-1).getCartao().validaCartao(clientes.get(q-1).getCartao().getNumeroCartao(),
-																	   clientes.get(q-1).getCartao().getValidadeCartao(),
-																	   clientes.get(q-1).getCartao().getCodigoSeguranca());
-							if(validade == true) {
-								System.out.println("CARTAO VALIDADO COM SUCESSO!");
-								System.out.println("Compra realizada!");
-								itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
+							int entrada = input.nextInt();
+							if(entrada == 1) {
+								boolean validade = clientes.get(q-1).getCartao().validaCartao(clientes.get(q-1).getCartao().getNumeroCartao(),
+																		   clientes.get(q-1).getCartao().getValidadeCartao(),
+																		   clientes.get(q-1).getCartao().getCodigoSeguranca());
+								if(validade == true) {
+									System.out.println("CARTAO VALIDADO COM SUCESSO!");
+									System.out.println("Compra realizada!");
+									itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
+								}else {
+									System.out.println("DADOS INVALIDOS");
+									System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
+									itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
+									carrinhos.remove(q-1);
+								}
 							}else {
-								System.out.println("DADOS INVALIDOS");
-								System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
-								itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
+								System.out.println("NAO FOI POSSIVEL CONCLUIR SUA COMPRA, ELA SERA CANCELADA.");
+								itens = 0; total = 0; qtdeTotal =0; opcao = 0; 
+								carrinhos.remove(q-1);
 							}
 						}
 					}

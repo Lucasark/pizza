@@ -1,7 +1,10 @@
+package br.com.trabOO.memoria;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+
+import br.com.trabOO.compra.Ingresso;
 
 public class Evento {
 	private String nomeEvento;

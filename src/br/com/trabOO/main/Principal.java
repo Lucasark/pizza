@@ -1,3 +1,6 @@
+package br.com.trabOO.main;
+
+import br.com.trabOO.compra.Bilheteria;
 
 public class Principal {
 	

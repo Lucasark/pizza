@@ -1,7 +1,13 @@
+package br.com.trabOO.main;
 import java.util.List;
 import java.util.ArrayList;
 //import java.util.Arrays;
 import java.util.Scanner;
+
+import br.com.trabOO.compra.Carrinho;
+import br.com.trabOO.memoria.Concerto;
+import br.com.trabOO.memoria.Estadio;
+import br.com.trabOO.memoria.Evento;
 
 //---------> ESTE MENU, ALÉM DE MENU É TBM UM "BANCO DE DADOS"<--------------
 
@@ -9,7 +15,7 @@ public class Menu {
 	
 	List<Estadio> estadios = new ArrayList<Estadio>(0);
 	List<Concerto> concertos = new ArrayList<Concerto>(0);
-	List<Evento> eventos = new ArrayList<Evento>(0);
+	public List<Evento> eventos = new ArrayList<Evento>(0);
 	
 	Scanner teclado = new Scanner(System.in);
 	

@@ -1,3 +1,4 @@
+package br.com.trabOO.memoria;
 import java.util.Scanner;
 
 public class Concerto {
