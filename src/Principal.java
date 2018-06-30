@@ -56,7 +56,7 @@ public class Principal {
 								}
 								else {
 									int eNumeroEvento = input.nextInt();
-									String nomeEvento = menu.eventos.get(eNumeroEvento).getNomeEvento();
+									String nomeEvento = menu.eventos.get(eNumeroEvento-1).getNomeEvento();
 									temp.add(nomeEvento);
 									System.out.println("Deseja Continuar? [0] Sim [1] Não");
 									y = input.nextInt();

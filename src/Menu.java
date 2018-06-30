@@ -40,7 +40,7 @@ public class Menu {
 		}
 		int k = 1;
 		for(Evento m: eventos){   
-			System.out.println("[" + k + "]" + " - " + m.getNomeEvento());
+			System.out.println("[" + k + "]" + " - " + eventos.get(k-1).getNomeEvento());
 			k++;
 		}
 		return 0;
