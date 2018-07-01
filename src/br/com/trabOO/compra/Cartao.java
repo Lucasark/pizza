@@ -53,9 +53,10 @@ public class Cartao {
 	
 	public boolean validaCartao(String numero, String validade, int codSeguranca) {
 		boolean valido = false;
+		numero = numero.replaceAll("\\s+","");
 		char caractereValidador = validade.charAt(2);
 		String stringValidador = String.valueOf(codSeguranca);
-		if(numero.length() == 19) {
+		if(numero.length() == 16) {
 			if(caractereValidador == '/' && validade.length() == 5) {
 				if(stringValidador.length() == 3) {
 					valido = true;
