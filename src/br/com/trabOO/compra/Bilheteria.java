@@ -25,7 +25,7 @@ public class Bilheteria {
 			switch(opcao) {
 				//BUG NO SELECIONAR CLIENTE
 				case 1:
-					@SuppressWarnings("unused") int a = menu.opcoesCompraCliente();
+					//@SuppressWarnings("unused") int a = menu.opcoesCompraCliente();
 					if (clientes.size() == 0) {
 						System.out.println("Não existe cliente\n - Criar novo cliente [1] Sim [0] Cancelar");
 						int IO = input.nextInt();
@@ -97,18 +97,17 @@ public class Bilheteria {
 								if(validade == true) {
 									System.out.println("CARTAO VALIDADO COM SUCESSO!");
 									System.out.println("Compra realizada!");
-									itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
 								}else {
 									System.out.println("DADOS INVALIDOS");
 									System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
-									itens = 0;total = 0;qtdeTotal = 0;opcao = 0;
 									carrinhos.remove(q-1);
 								}
-							}else {
+							}
+							else {
 								System.out.println("NAO FOI POSSIVEL CONCLUIR SUA COMPRA, ELA SERA CANCELADA.");
-								itens = 0; total = 0; qtdeTotal =0; opcao = 0; 
 								carrinhos.remove(q-1);
 							}
+							itens = 0; total = 0; qtdeTotal =0; opcao = 0; 
 						}
 					}
 					break;
@@ -124,14 +123,17 @@ public class Bilheteria {
 							System.out.println("[" + q + "]" + m.getnome());
 							q++;
 						}
-						System.out.println("Digite sua senha: ");
-						int w = input.nextInt();
-						System.out.println(clientes.get(q-2).getSenha());
-						if(w == clientes.get(q-2).getSenha()) {
-							//ver se carrinho esta vazio
-							//fazer a logica de pegar os itens do carrinho do cliente
-							//com bug violando
-							menu.opcoesCliente(carrinhos.get(q-2).getCarrinho());
+						int j = input.nextInt();
+						if (carrinhos.get(j-1) == null) {
+							System.out.println("Digite sua senha: ");
+							int w = input.nextInt();
+							System.out.println(clientes.get(j-1).getSenha());
+							if(w == clientes.get(j-1).getSenha()) {
+								menu.opcoesCliente(carrinhos.get(j-1).getCarrinho());
+							}
+						}
+						else {
+							System.out.println("Sem compras feitas");
 						}
 					}
 					break;
