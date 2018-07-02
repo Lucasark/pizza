@@ -23,9 +23,7 @@ public class Bilheteria {
 					  + "[0] - Cancelar");
 			int opcao = input.nextInt();
 			switch(opcao) {
-				//BUG NO SELECIONAR CLIENTE
 				case 1:
-					//@SuppressWarnings("unused") int a = menu.opcoesCompraCliente();
 					if (clientes.size() == 0) {
 						System.out.println("Não existe cliente\n - Criar novo cliente [1] Sim [0] Cancelar");
 						int IO = input.nextInt();
@@ -45,7 +43,6 @@ public class Bilheteria {
 				    		System.out.println("[" + loop + "]"+m.getnome());
 				    	}
 						int q = input.nextInt();
-						//System.out.println(clientes.get(q-1).getSenha());
 						System.out.print("Digite sua senha:");
 						int senha = input.nextInt();
 						if (senha == clientes.get(q-1).getSenha()) {
@@ -62,9 +59,9 @@ public class Bilheteria {
 								}
 								else {
 									int eNumeroEvento = input.nextInt();
-									String dadosEvento = menu.eventos.get(eNumeroEvento-1).getNomeEvento() + " " + 
-														 menu.eventos.get(eNumeroEvento - 1).getConcerto() + " " +
-														 menu.eventos.get(eNumeroEvento - 1).getEstadio() + " ";
+									String dadosEvento = "Evento: " + menu.eventos.get(eNumeroEvento-1).getNomeEvento() + " " + 
+														 "Turne: " + menu.eventos.get(eNumeroEvento - 1).getConcerto() + " " +
+														 "Estadio: " + menu.eventos.get(eNumeroEvento - 1).getEstadio() + " ";
 									System.out.println("Voce escolheu o seguinte evento: "
 											+ dadosEvento);
 									System.out.println("Selecione o tipo de ingresso para o evento: ");
@@ -72,10 +69,10 @@ public class Bilheteria {
 									int eNumeroIngressoEvento = input.nextInt();
 									dadosEvento += menu.eventos.get(eNumeroEvento-1).getIngressoEvento(eNumeroIngressoEvento-1) + "\n";
 									System.out.println("Quantos ingressos desse tipo?");
-									h = input.nextInt();
-									itens += h;
+									int t = input.nextInt();
+									itens += t;
 									
-									total += menu.eventos.get(eNumeroEvento-1).getCalculaIngressosEvento(eNumeroIngressoEvento-1, h);
+									total += menu.eventos.get(eNumeroEvento-1).getCalculaIngressosEvento(eNumeroIngressoEvento-1, t);
 									qtdeTotal = total;
 									temp.add(dadosEvento);
 									System.out.println("Deseja Continuar? [0] Sim [1] Não");
@@ -87,25 +84,26 @@ public class Bilheteria {
 							Carrinho carrinho = new Carrinho(carrinhos.get(q-1).getCarrinho(), carrinhos.get(q-1).getQuantidade());
 							carrinhos.add(carrinho);
 							carrinhos.get(q-1).dadosCarrinho(qtdeTotal);
-							
-							System.out.println("Para finalizar sua compra digite [1] para verificar seus dados do cartao serao validados: ");
-							int entrada = input.nextInt();
-							if(entrada == 1) {
-								boolean validade = clientes.get(q-1).getCartao().validaCartao(clientes.get(q-1).getCartao().getNumeroCartao(),
-																		   clientes.get(q-1).getCartao().getValidadeCartao(),
-																		   clientes.get(q-1).getCartao().getCodigoSeguranca());
-								if(validade == true) {
-									System.out.println("CARTAO VALIDADO COM SUCESSO!");
-									System.out.println("Compra realizada!");
-								}else {
-									System.out.println("DADOS INVALIDOS");
-									System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
+							if (itens != 0) {
+								System.out.println("Para finalizar sua compra digite [0] para concluir a compra e validar o cartão ou [1] para cancelar");
+								int entrada = input.nextInt();
+								if(entrada == 0) {
+									boolean validade = clientes.get(q-1).getCartao().validaCartao(clientes.get(q-1).getCartao().getNumeroCartao(),
+																			   clientes.get(q-1).getCartao().getValidadeCartao(),
+																			   clientes.get(q-1).getCartao().getCodigoSeguranca());
+									if(validade == true) {
+										System.out.println("CARTAO VALIDADO COM SUCESSO!");
+										System.out.println("Compra realizada!");
+									}else {
+										System.out.println("DADOS INVALIDOS");
+										System.out.println("FAVOR REALIZAR NOVAMENTE CADASTRO DE CLIENTE");
+										carrinhos.remove(q-1);
+									}
+								}
+								else {
+									System.out.println("NAO FOI POSSIVEL CONCLUIR SUA COMPRA, ELA SERA CANCELADA.");
 									carrinhos.remove(q-1);
 								}
-							}
-							else {
-								System.out.println("NAO FOI POSSIVEL CONCLUIR SUA COMPRA, ELA SERA CANCELADA.");
-								carrinhos.remove(q-1);
 							}
 							itens = 0; total = 0; qtdeTotal =0; opcao = 0; 
 						}
